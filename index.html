@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arianto Bagus Wibowo, S.Si. | Portfolio & Professional Profile</title>
+  <meta name="description" content="Professional portfolio of Arianto Bagus Wibowo - Physics Graduate from Institut Teknologi Sepuluh Nopember (ITS), specializing in Acoustics, Instrumentation, and Engineering.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#172554',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand with Real Photo in Top Left -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="relative w-11 h-11 rounded-full overflow-hidden border-2 border-blue-600 shadow-sm group-hover:scale-105 transition-transform bg-slate-100 flex-shrink-0">
+          <img 
+            src="Fotoku.jpg" 
+            alt="Arianto Bagus Wibowo" 
+            class="w-full h-full object-cover object-top"
+          >
+        </div>
+        <div>
+          <span class="block font-bold text-slate-900 tracking-tight text-base sm:text-lg leading-tight group-hover:text-blue-600 transition-colors">
+            Arianto Bagus W.
+          </span>
+          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider block" data-lang="nav_degree">
+            Sarjana Fisika • ITS Surabaya
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
+        <a href="#about" class="hover:text-blue-600 transition-colors py-1" data-lang="nav_about">Tentang</a>
+        <a href="#research" class="hover:text-blue-600 transition-colors py-1" data-lang="nav_research">Riset & Rekayasa</a>
+        <a href="#experience" class="hover:text-blue-600 transition-colors py-1" data-lang="nav_exp">Pengalaman Kerja</a>
+        <a href="#skills" class="hover:text-blue-600 transition-colors py-1" data-lang="nav_skills">Keahlian</a>
+        <a href="#contact" class="hover:text-blue-600 transition-colors py-1" data-lang="nav_contact">Kontak</a>
+      </nav>
+
+      <!-- Language Switcher & Download CV -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher Button -->
+        <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-slate-300 bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700 transition-all shadow-sm" title="Ganti Bahasa / Switch Language">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-blue-600"></i>
+          <span id="langLabel" class="tracking-wider">ID (Bahasa)</span>
+        </button>
+
+        <!-- Download CV Button in Header -->
+        <a href="Arianto_Bagus_CV_Physics_Engineering.pdf" download="Arianto_Bagus_CV_Physics_Engineering.pdf" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm shadow-blue-600/30 hover:shadow-md transition-all">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span data-lang="btn_cv_short">Unduh CV</span>
+        </a>
+
+        <!-- Mobile menu button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" aria-label="Buka Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3">
+      <a href="#about" class="block py-2 text-slate-700 font-semibold hover:text-blue-600" data-lang="nav_about" onclick="closeMobileMenu()">Tentang</a>
+      <a href="#research" class="block py-2 text-slate-700 font-semibold hover:text-blue-600" data-lang="nav_research" onclick="closeMobileMenu()">Riset & Rekayasa</a>
+      <a href="#experience" class="block py-2 text-slate-700 font-semibold hover:text-blue-600" data-lang="nav_exp" onclick="closeMobileMenu()">Pengalaman Kerja</a>
+      <a href="#skills" class="block py-2 text-slate-700 font-semibold hover:text-blue-600" data-lang="nav_skills" onclick="closeMobileMenu()">Keahlian</a>
+      <a href="#contact" class="block py-2 text-slate-700 font-semibold hover:text-blue-600" data-lang="nav_contact" onclick="closeMobileMenu()">Kontak</a>
+      <a href="Arianto_Bagus_CV_Physics_Engineering.pdf" download="Arianto_Bagus_CV_Physics_Engineering.pdf" class="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 rounded-lg bg-blue-600 text-white font-bold text-sm">
+        <i data-lucide="download" class="w-4 h-4"></i>
+        <span data-lang="btn_cv">Unduh CV Lengkap (PDF)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative pt-12 pb-20 md:py-24 overflow-hidden bg-grid-pattern border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Introduction & Pitch -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span data-lang="hero_status">Terbuka untuk Peluang Karir Baru</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight font-display">
+            Arianto Bagus <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600">Wibowo, S.Si.</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl font-medium text-slate-600" data-lang="hero_role">
+            Lulusan Fisika Institut Teknologi Sepuluh Nopember (ITS) • Spesialisasi Akustik, Instrumentasi & Rekayasa Teknis
+          </p>
+
+          <p class="text-slate-600 leading-relaxed text-base sm:text-lg" data-lang="hero_desc">
+            Menggabungkan keahlian analisis data eksperimen (MATLAB/Python), riset sistem pengukuran getaran kereta & IoT hidroponik otomatis, asisten lab 3+ tahun, serta kepemimpinan dan B2B Sales Engineering untuk solusi industri yang presisi.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <!-- Download CV -->
+            <a href="Arianto_Bagus_CV_Physics_Engineering.pdf" download="Arianto_Bagus_CV_Physics_Engineering.pdf" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-lg shadow-blue-600/25 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+              <i data-lucide="file-down" class="w-5 h-5"></i>
+              <span data-lang="btn_cv">Unduh CV Lengkap (PDF)</span>
+            </a>
+
+            <!-- WhatsApp Direct Contact -->
+            <a href="https://wa.me/628993749410?text=Halo%20Arianto,%20saya%20melihat%20portfolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-600/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span data-lang="btn_wa">Hubungi via WhatsApp</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/arianto-bagus-b97a12271" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm hover:border-slate-400 transition-all shadow-sm">
+              <i data-lucide="linkedin" class="w-5 h-5 text-blue-700"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+          <!-- Highlight Badges -->
+          <div class="pt-4 grid grid-cols-2 sm:grid-cols-2 gap-4 border-t border-slate-200/80 text-left max-w-md mx-auto lg:mx-0">
+            <div class="p-3 bg-white rounded-xl border border-slate-200/80 shadow-xs">
+              <div class="text-2xl font-bold text-slate-900 font-display">3.14 <span class="text-xs font-normal text-slate-500">/ 4.00</span></div>
+              <div class="text-xs text-slate-500 font-medium" data-lang="badge_gpa">IPK Sarjana Fisika ITS</div>
+            </div>
+            <div class="p-3 bg-white rounded-xl border border-slate-200/80 shadow-xs">
+              <div class="text-2xl font-bold text-slate-900 font-display">3+ <span class="text-xs font-normal text-slate-500" data-lang="badge_yr">Tahun</span></div>
+              <div class="text-xs text-slate-500 font-medium" data-lang="badge_lab">Asisten Laboratorium Fisika</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Profile Photo Card with Frame (Compact & Balanced) -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-[280px] sm:max-w-[300px]">
+            
+            <div class="absolute -top-3 -left-3 w-48 h-48 bg-blue-400/20 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="absolute -bottom-3 -right-3 w-48 h-48 bg-indigo-400/20 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="relative rounded-2xl overflow-hidden bg-white p-2.5 shadow-xl border border-slate-200/80 ring-1 ring-slate-900/5">
+              <div class="aspect-[4/5] rounded-xl overflow-hidden relative bg-slate-100">
+                <img 
+                  src="Fotoku.jpg" 
+                  alt="Arianto Bagus Wibowo" 
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent flex flex-col justify-end p-4 text-white">
+                  <span class="text-[11px] font-medium uppercase tracking-widest text-blue-300" data-lang="photo_title">Sarjana Sains (S.Si.) Fisika</span>
+                  <p class="font-bold text-base">Arianto Bagus Wibowo</p>
+                  <p class="text-[11px] text-slate-200 flex items-center gap-1 mt-0.5">
+                    <i data-lucide="map-pin" class="w-3 h-3 text-red-400"></i>
+                    Sidoarjo / Surabaya, Jawa Timur
+                  </p>
+                </div>
+              </div>
+
+              <!-- Quick Verification Pill -->
+              <div class="mt-2.5 py-1.5 px-3 bg-slate-50 rounded-lg flex items-center justify-between text-xs text-slate-600 border border-slate-200">
+                <span class="flex items-center gap-1.5 font-medium text-[11px]">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i>
+                  <span data-lang="badge_verified">Lulusan Resmi Fisika ITS</span>
+                </span>
+                <span class="text-[10px] font-mono text-slate-400">2019-2024</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & KEY ATTRIBUTES SECTION -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-xs uppercase font-bold tracking-wider text-blue-600 mb-2" data-lang="sec_about_tag">PROFIL PROFESIONAL</h2>
+        <h3 class="text-3xl font-extrabold text-slate-900 font-display" data-lang="sec_about_title">Menghubungkan Ketelitian Sains Fisika dengan Kebutuhan Solusi Industri</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-5 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+            <i data-lucide="activity" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2" data-lang="card_1_title">Akustik & Instrumentasi Fisika</h4>
+          <p class="text-slate-600 text-sm leading-relaxed" data-lang="card_1_desc">
+            Keahlian mengoperasikan perangkat laboratorium presisi, kalibrasi sensor, pengolahan sinyal digital, serta analisis komputasi gelombang suara menggunakan MATLAB dan Python.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2" data-lang="card_2_title">Rekayasa Perangkat Keras & IoT</h4>
+          <p class="text-slate-600 text-sm leading-relaxed" data-lang="card_2_desc">
+            Berpengalaman merancang struktur mekanik dan sirkuit elektronik sensor (sistem penimbangan beban dinamis kereta api & otomatisasi hidroponik berbasis mikrokontroler Arduino).
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center mb-5 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2" data-lang="card_3_title">Konsultasi Teknis & B2B Sales</h4>
+          <p class="text-slate-600 text-sm leading-relaxed" data-lang="card_3_desc">
+            Komunikasi teknis profesional dengan klien industri manufaktur & fabrikasi logam, pembuatan quotation, proposal teknis, koordinasi produksi, dan audit integritas data skala nasional.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LABORATORY & SCIENTIFIC RESEARCH / ENGINEERING SECTION (EXPANDED WITH NEW CV) -->
+  <section id="research" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-xs uppercase font-bold tracking-wider text-blue-600 mb-2" data-lang="sec_res_tag">PENGALAMAN RISET & REKAYASA TEKNOLOGI</h2>
+        <h3 class="text-3xl font-extrabold text-slate-900 font-display" data-lang="sec_res_title">Inovasi Laboratorium Fisika, Sistem Instrumentasi & IoT</h3>
+      </div>
+
+      <!-- Feature 1: Final Project / Skripsi ITS -->
+      <div class="rounded-2xl bg-gradient-to-br from-slate-900 to-blue-950 text-white p-8 md:p-10 shadow-xl mb-8 relative overflow-hidden">
+        <div class="absolute right-0 top-0 translate-x-1/4 -translate-y-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">
+          <i data-lucide="award" class="w-4 h-4"></i>
+          <span data-lang="thesis_badge">Skripsi Sarjana Fisika ITS • Institut Teknologi Sepuluh Nopember</span>
+        </div>
+
+        <h4 class="text-xl md:text-2xl font-bold mb-4 leading-snug" data-lang="thesis_title">
+          "Analysis of the Effect of Finger Position on Acoustic Guitar Fretting Technique on Sound Quality based on Mersenne's Law"
+        </h4>
+
+        <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-6 max-w-4xl" data-lang="thesis_desc">
+          Riset eksperimental yang meneliti pengaruh dinamika posisi penekanan fret gitar akustik terhadap harmonik frekuensi dan kualitas audio berdasarkan Hukum Mersenne. Mengembangkan sistem instrumen berbasis mikrokontroler presisi untuk menentukan posisi fret yang menghasilkan stabilitas frekuensi target secara optimal.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-2 border-t border-white/10">
+          <div class="flex items-center gap-2 text-xs text-slate-300 font-mono">
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+            <span data-lang="thesis_tag1">Integrasi Sistem Mikrokontroler</span>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-slate-300 font-mono">
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+            <span data-lang="thesis_tag2">Analisis Spektrum Frekuensi Akustik</span>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-slate-300 font-mono">
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+            <span data-lang="thesis_tag3">Formulasi Hukum Mersenne</span>
+          </div>
+          
+          <a href="https://repository.its.ac.id/107680" target="_blank" rel="noopener noreferrer" class="ml-auto inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-all shadow-md">
+            <span data-lang="btn_repo">Repository Karya Ilmiah ITS</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature 2 & 3: Railway Weigh-in-Motion & KebonID Hydroponics Startup -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        
+        <!-- Railway Project -->
+        <div class="p-7 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 shadow-sm transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
+                <i data-lucide="train" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full">Jan 2021 – Jul 2022</span>
+            </div>
+            <h4 class="text-base font-bold text-slate-900 mb-1" data-lang="rail_title">Anggota Tim Peneliti & Teknisi (Proyek Riset Dosen ITS)</h4>
+            <p class="text-xs text-blue-600 font-semibold mb-3" data-lang="rail_sub">Railway Weigh-in-Motion System (Departemen Fisika ITS)</p>
+            <p class="text-xs text-slate-500 mb-4 italic" data-lang="rail_desc">Pengembangan sistem pengukuran bobot kereta api yang sedang bergerak menggunakan load cell pada rel dan pergeseran frekuensi alami rel akibat getaran.</p>
+            <div class="text-sm text-slate-600" data-lang="rail_points">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-xs text-slate-500">
+            <span class="font-semibold text-slate-800" data-lang="rail_tech_lbl">Teknologi:</span> Load Cell, Vibration Analysis, Microcontroller DAQ, Mechanical Mounting.
+          </div>
+        </div>
+
+        <!-- KebonID Hydroponics Startup -->
+        <div class="p-7 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 shadow-sm transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center font-bold">
+                <i data-lucide="sprout" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-bold text-teal-700 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full">Mar 2017 – Jul 2020</span>
+            </div>
+            <h4 class="text-base font-bold text-slate-900 mb-1" data-lang="kebon_title">Teknisi Elektrikal & Pendiri (Founder)</h4>
+            <p class="text-xs text-teal-600 font-semibold mb-3">KebonID — Startup Teknologi Tepat Guna Hidroponik</p>
+            <p class="text-xs text-slate-500 mb-4 italic" data-lang="kebon_desc">Startup binaan yang berakar dari inovasi teknologi tepat guna dan memenangkan LKTTG 2017 Sidoarjo (Lomba Karya Teknologi Tepat Guna).</p>
+            <div class="text-sm text-slate-600" data-lang="kebon_points">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-xs text-slate-500">
+            <span class="font-semibold text-slate-800" data-lang="kebon_tech_lbl">Teknologi:</span> Arduino, Multi-sensor Calibration, Automated Actuator Pump Control, LKTTG 2017 Winner.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Laboratory Assistant Roles -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Lab 1: Acoustic Instrumentation -->
+        <div class="p-6 rounded-2xl border border-slate-200 bg-white hover:border-blue-400 shadow-sm transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+              <i data-lucide="volume-2" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200" data-lang="lab1_date">Jan 2023 – Okt 2023</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900" data-lang="lab1_title">Asisten Laboratorium Fisika Instrumentasi Akustik</h4>
+          <p class="text-xs text-blue-600 font-semibold mb-3" data-lang="lab1_sub">Departemen Fisika ITS Surabaya</p>
+          <div class="text-sm text-slate-600" data-lang="lab1_points">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Lab 2: Experimental Physics -->
+        <div class="p-6 rounded-2xl border border-slate-200 bg-white hover:border-blue-400 shadow-sm transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
+              <i data-lucide="flask-conical" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200" data-lang="lab2_date">Mei 2020 – Jun 2023 (3+ Thn)</span>
+          </div>
+          <h4 class="text-base font-bold text-slate-900" data-lang="lab2_title">Asisten Laboratorium Fisika Eksperimental</h4>
+          <p class="text-xs text-indigo-600 font-semibold mb-3" data-lang="lab2_sub">Departemen Fisika ITS Surabaya</p>
+          <div class="text-sm text-slate-600" data-lang="lab2_points">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE SECTION -->
+  <section id="experience" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+        <div>
+          <h2 class="text-xs uppercase font-bold tracking-wider text-blue-600 mb-2" data-lang="sec_exp_tag">PENGALAMAN KERJA</h2>
+          <h3 class="text-3xl font-extrabold text-slate-900 font-display" data-lang="sec_exp_title">Rekam Jejak Profesional & Kontribusi Industri</h3>
+        </div>
+        <p class="text-sm text-slate-500 mt-2 md:mt-0 font-medium" data-lang="sec_exp_sub">Pengalaman industri manufaktur, operasional data BUMN, hingga edukasi sains</p>
+      </div>
+
+      <!-- Timeline wrapper -->
+      <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:w-0.5 before:-translate-x-1/2 before:bg-slate-200">
+        
+        <!-- Job 1: PT Tata Rapika Globalindo -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+          <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 pl-12 md:pl-0 mt-3 md:mt-0">
+            <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 font-bold text-xs rounded-full mb-1" data-lang="job1_date">Agu 2025 – Sekarang</span>
+            <h4 class="text-lg font-bold text-slate-900" data-lang="job1_title">B2B Sales Engineer</h4>
+            <div class="text-sm font-semibold text-slate-700">PT. Tata Rapika Globalindo <span class="text-slate-400 font-normal">• Sidoarjo</span></div>
+            <p class="text-xs text-slate-500 mt-1 italic" data-lang="job1_desc">Perusahaan sheet metal fabrication & engineering melayani klien industrial & manufaktur.</p>
+            <div class="mt-3 text-sm text-slate-600 md:text-right" data-lang="job1_points">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+          
+          <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center ring-4 ring-white shadow-md z-10 order-1">
+            <i data-lucide="briefcase" class="w-4 h-4"></i>
+          </div>
+
+          <div class="md:w-1/2 md:pl-12 order-3 hidden md:block">
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-500 shadow-sm">
+              <span class="font-semibold text-slate-800" data-lang="job1_skilltag">Keahlian Diterapkan:</span> <span data-lang="job1_skills">Konsultasi Teknis, Penawaran Biaya & Quotation, Sheet Metal Fabrication, Presentasi Produk Industri.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2: Perum BULOG Data Verification -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+          <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 hidden md:block">
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-500 shadow-sm">
+              <span class="font-semibold text-slate-800" data-lang="job2_skilltag">Keahlian Diterapkan:</span> <span data-lang="job2_skills">Audit Data, Rekonsiliasi Silang, Kontrol Kualitas, Pelaporan Eksekutif, Manajemen Data Logistik.</span>
+            </div>
+          </div>
+
+          <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center ring-4 ring-white shadow-md z-10 order-1">
+            <i data-lucide="database" class="w-4 h-4"></i>
+          </div>
+
+          <div class="md:w-1/2 md:pl-12 order-2 pl-12 md:pl-0 mt-3 md:mt-0">
+            <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 font-bold text-xs rounded-full mb-1" data-lang="job2_date">Jun 2026 – Sep 2026</span>
+            <h4 class="text-lg font-bold text-slate-900" data-lang="job2_title">Petugas Verifikasi Data (Program Bantuan Pangan)</h4>
+            <div class="text-sm font-semibold text-slate-700">Perum BULOG <span class="text-slate-400 font-normal" data-lang="job2_loc">• Surabaya (Remote)</span></div>
+            <p class="text-xs text-slate-500 mt-1 italic" data-lang="job2_desc">BUMN logistik pangan nasional pengelola pasokan dan bantuan pangan beras pemerintah.</p>
+            <div class="mt-3 text-sm text-slate-600" data-lang="job2_points">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3: Perum BULOG Distribution Officer -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+          <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 pl-12 md:pl-0 mt-3 md:mt-0">
+            <span class="inline-block px-3 py-1 bg-slate-200 text-slate-700 font-bold text-xs rounded-full mb-1" data-lang="job3_date">Jun 2025 – Sep 2025</span>
+            <h4 class="text-lg font-bold text-slate-900" data-lang="job3_title">Petugas Distribusi Bantuan Pangan</h4>
+            <div class="text-sm font-semibold text-slate-700">Perum BULOG <span class="text-slate-400 font-normal">• Surabaya</span></div>
+            <div class="mt-3 text-sm text-slate-600 md:text-right" data-lang="job3_points">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+          
+          <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-600 text-white flex items-center justify-center ring-4 ring-white shadow-md z-10 order-1">
+            <i data-lucide="package-check" class="w-4 h-4"></i>
+          </div>
+
+          <div class="md:w-1/2 md:pl-12 order-3 hidden md:block">
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-500 shadow-sm">
+              <span class="font-semibold text-slate-800" data-lang="job3_skilltag">Keahlian Diterapkan:</span> <span data-lang="job3_skills">Manajemen Logistik Lapangan, Kepatuhan SOP, Koordinasi Gudang & Satgas, Pencatatan Akurat.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 4: SMA Negeri 3 Sidoarjo Robotics Instructor -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+          <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 hidden md:block">
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-500 shadow-sm">
+              <span class="font-semibold text-slate-800" data-lang="job4_skilltag">Keahlian Diterapkan:</span> <span data-lang="job4_skills">Pemrograman Mikrokontroler, Rangkaian Elektronika, Strategi Kompetisi, Pembinaan Tim.</span>
+            </div>
+          </div>
+
+          <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center ring-4 ring-white shadow-md z-10 order-1">
+            <i data-lucide="cpu" class="w-4 h-4"></i>
+          </div>
+
+          <div class="md:w-1/2 md:pl-12 order-2 pl-12 md:pl-0 mt-3 md:mt-0">
+            <span class="inline-block px-3 py-1 bg-teal-100 text-teal-700 font-bold text-xs rounded-full mb-1" data-lang="job4_date">Jul 2019 – Jun 2025 (6 Tahun)</span>
+            <h4 class="text-lg font-bold text-slate-900" data-lang="job4_title">Instruktur Robotika</h4>
+            <div class="text-sm font-semibold text-slate-700">SMA Negeri 3 Sidoarjo <span class="text-slate-400 font-normal">• Sidoarjo</span></div>
+            <div class="mt-3 text-sm text-slate-600" data-lang="job4_points">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 5: Uno Education Tutor -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+          <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 pl-12 md:pl-0 mt-3 md:mt-0">
+            <span class="inline-block px-3 py-1 bg-slate-200 text-slate-700 font-bold text-xs rounded-full mb-1" data-lang="job5_date">Okt 2023 – Jul 2024</span>
+            <h4 class="text-lg font-bold text-slate-900" data-lang="job5_title">Tutor Akademik (Matematika & Fisika)</h4>
+            <div class="text-sm font-semibold text-slate-700">Uno Education <span class="text-slate-400 font-normal">• Surabaya</span></div>
+            <div class="mt-3 text-sm text-slate-600 md:text-right" data-lang="job5_points">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+          
+          <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-600 text-white flex items-center justify-center ring-4 ring-white shadow-md z-10 order-1">
+            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+          </div>
+
+          <div class="md:w-1/2 md:pl-12 order-3 hidden md:block">
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-500 shadow-sm">
+              <span class="font-semibold text-slate-800" data-lang="job5_skilltag">Keahlian Diterapkan:</span> <span data-lang="job5_skills">Pemecahan Masalah Kuantitatif, Fisika Lanjutan, Kalkulus, Komunikasi Edukatif.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS & ORGANIZATIONAL LEADERSHIP -->
+  <section id="skills" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Skills Section (7 cols) -->
+        <div class="lg:col-span-7">
+          <h2 class="text-xs uppercase font-bold tracking-wider text-blue-600 mb-2" data-lang="sec_skill_tag">KOMPETENSI & KEAHLIAN</h2>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display mb-8" data-lang="sec_skill_title">Kemampuan Teknis, Software, dan Analisis</h3>
+
+          <div class="space-y-6">
+            
+            <!-- Skill Group 1: Laboratory & Technical -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+              <div class="flex items-center gap-2.5 mb-3 font-bold text-slate-900 text-sm">
+                <i data-lucide="microscope" class="w-4 h-4 text-blue-600"></i>
+                <span data-lang="skill_grp1">Keahlian Laboratorium & Instrumentasi Fisika</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_acoustics">Pengukuran Akustik & Bunyi</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_sensor">Integrasi & Kalibrasi Sensor</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_circuit">Desain Sirkuit & Mekanik Instrumentasi</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_calib">Pengoperasian Alat Lab Presisi</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_data">Pengumpulan & Analisis Data Eksperimen</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_k3">Keselamatan Kerja Lab (K3)</span>
+              </div>
+            </div>
+
+            <!-- Skill Group 2: Software & Engineering Tools -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+              <div class="flex items-center gap-2.5 mb-3 font-bold text-slate-900 text-sm">
+                <i data-lucide="terminal" class="w-4 h-4 text-indigo-600"></i>
+                <span data-lang="skill_grp2">Pemrograman & Perangkat Lunak Teknis</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-lg border border-blue-200">Arduino / Mikrokontroler</span>
+                <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-lg border border-indigo-200">MATLAB</span>
+                <span class="px-3 py-1 bg-sky-50 text-sky-700 text-xs font-bold rounded-lg border border-sky-200">Python (Data Analysis)</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg">Microsoft Excel & Office</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_cad">Gambar Fabrikasi & CAD Dasar</span>
+              </div>
+            </div>
+
+            <!-- Skill Group 3: Commercial & Professional -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+              <div class="flex items-center gap-2.5 mb-3 font-bold text-slate-900 text-sm">
+                <i data-lucide="briefcase" class="w-4 h-4 text-teal-600"></i>
+                <span data-lang="skill_grp3">Keahlian Profesional & Komersial</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_consult">Konsultasi Teknis B2B</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_proposal">Proposal Teknis & Penawaran Harga</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_adapt">Adaptasi Cepat & Pembelajar Cekatan</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_coord">Koordinasi Tim & Kerja Mandiri</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-lg" data-lang="skill_item_audit">Verifikasi & Audit Integritas Data</span>
+              </div>
+            </div>
+
+            <!-- Language Proficiency -->
+            <div class="p-4 bg-blue-50/70 border border-blue-200 rounded-xl flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <i data-lucide="languages" class="w-4 h-4 text-blue-600"></i>
+                <span class="font-bold text-slate-800" data-lang="lang_title">Kemampuan Bahasa:</span>
+                <span class="text-slate-600" data-lang="lang_desc">Bahasa Indonesia (Penutur Asli), Bahasa Inggris (Kerja Profesional)</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Leadership & Organization (5 cols) -->
+        <div class="lg:col-span-5">
+          <h2 class="text-xs uppercase font-bold tracking-wider text-blue-600 mb-2" data-lang="sec_org_tag">PENGALAMAN ORGANISASI</h2>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display mb-8" data-lang="sec_org_title">Kepemimpinan & Kolaborasi</h3>
+
+          <div class="space-y-6">
+            
+            <!-- Org 1: UKM IFLS ITS -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+              <div class="text-xs font-bold text-blue-600 mb-1" data-lang="org1_date">Jan 2020 – Des 2022</div>
+              <h4 class="text-base font-bold text-slate-900" data-lang="org1_title">Kepala Divisi</h4>
+              <p class="text-xs font-semibold text-slate-600 mb-2">ITS Foreign Language Society (UKM IFLS ITS)</p>
+              <p class="text-xs text-slate-500 mb-3" data-lang="org1_desc">Unit kegiatan mahasiswa ITS bidang pengembangan bahasa & budaya asing (500+ anggota aktif).</p>
+              <div class="text-xs text-slate-600" data-lang="org1_points">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Org 2: Himasika ITS -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="text-xs font-bold text-blue-600 mb-1" data-lang="org2_date">Jul 2021 – Jan 2022</div>
+              <h4 class="text-base font-bold text-slate-900" data-lang="org2_title">Staf Komite Instruktur</h4>
+              <p class="text-xs font-semibold text-slate-600 mb-2">Himpunan Mahasiswa Fisika ITS (Himasika ITS)</p>
+              <p class="text-xs text-slate-500 mb-3" data-lang="org2_desc">Organisasi resmi mahasiswa Departemen Fisika ITS.</p>
+              <div class="text-xs text-slate-600" data-lang="org2_points">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OFFICIAL CREDENTIALS & EDUCATION -->
+  <section class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="p-8 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50 to-slate-50 border border-blue-200/60 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600" data-lang="edu_badge">Pendidikan Resmi</span>
+          <h4 class="text-xl font-bold text-slate-900" data-lang="edu_title">Sarjana Sains Fisika (S.Si.) — Institut Teknologi Sepuluh Nopember (ITS)</h4>
+          <p class="text-sm text-slate-600" data-lang="edu_desc">Lulus Februari 2024 • Indeks Prestasi Kumulatif (IPK): <strong>3.14 / 4.00</strong> • Departemen Fisika, Fakultas Sains dan Analitika Data</p>
+        </div>
+
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <a href="Arianto_Bagus_CV_Physics_Engineering.pdf" download="Arianto_Bagus_CV_Physics_Engineering.pdf" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md transition-all">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span data-lang="btn_cv_get">Unduh Berkas CV Lengkap (PDF)</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT & FOOTER SECTION -->
+  <section id="contact" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="max-w-2xl mx-auto text-center mb-14">
+        <h2 class="text-xs uppercase font-bold tracking-widest text-blue-400 mb-3" data-lang="sec_contact_tag">HUBUNGI SAYA</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold font-display" data-lang="sec_contact_title">Mari Berdiskusi & Berkolaborasi</h3>
+        <p class="text-slate-400 mt-4 text-sm sm:text-base" data-lang="sec_contact_sub">
+          Saya terbuka untuk mendiskusikan peluang karir penuh waktu, proyek rekayasa/teknis, atau konsultasi kebutuhan perusahaan Anda.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-14">
+        
+        <!-- WhatsApp Card -->
+        <a href="https://wa.me/628993749410?text=Halo%20Arianto,%20saya%20tertarik%20dengan%20profil%20Anda." target="_blank" rel="noopener noreferrer" class="p-6 rounded-2xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500 transition-all flex flex-col items-center text-center group">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+            <i data-lucide="message-circle" class="w-7 h-7"></i>
+          </div>
+          <span class="text-xs font-semibold text-slate-400 mb-1" data-lang="contact_wa_lbl">WhatsApp Langsung</span>
+          <span class="text-sm font-bold text-white tracking-wide">+62 899-3749-410</span>
+          <span class="mt-3 text-xs text-emerald-400 font-semibold group-hover:underline" data-lang="contact_wa_btn">Kirim Pesan WA &rarr;</span>
+        </a>
+
+        <!-- Email Card -->
+        <a href="mailto:ariantobgswibowo2@gmail.com" class="p-6 rounded-2xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-blue-500 transition-all flex flex-col items-center text-center group">
+          <div class="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all">
+            <i data-lucide="mail" class="w-7 h-7"></i>
+          </div>
+          <span class="text-xs font-semibold text-slate-400 mb-1" data-lang="contact_mail_lbl">Email Resmi</span>
+          <span class="text-sm font-bold text-white break-all">ariantobgswibowo2@gmail.com</span>
+          <span class="mt-3 text-xs text-blue-400 font-semibold group-hover:underline" data-lang="contact_mail_btn">Kirim Email &rarr;</span>
+        </a>
+
+        <!-- LinkedIn Card -->
+        <a href="https://www.linkedin.com/in/arianto-bagus-b97a12271" target="_blank" rel="noopener noreferrer" class="p-6 rounded-2xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-sky-500 transition-all flex flex-col items-center text-center group">
+          <div class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-sky-500 group-hover:text-white transition-all">
+            <i data-lucide="linkedin" class="w-7 h-7"></i>
+          </div>
+          <span class="text-xs font-semibold text-slate-400 mb-1" data-lang="contact_li_lbl">Profil Profesional</span>
+          <span class="text-sm font-bold text-white">in/arianto-bagus-b97a12271</span>
+          <span class="mt-3 text-xs text-sky-400 font-semibold group-hover:underline" data-lang="contact_li_btn">Kunjungi LinkedIn &rarr;</span>
+        </a>
+
+      </div>
+
+      <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+        <p data-lang="footer_copy">&copy; 2026 Arianto Bagus Wibowo, S.Si. Seluruh hak cipta dilindungi.</p>
+        <p class="mt-2 sm:mt-0" data-lang="footer_tag">Institut Teknologi Sepuluh Nopember (ITS) • Fisika & Rekayasa Teknik</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- JAVASCRIPT FOR MULTI-LANGUAGE & INTERACTIONS -->
+  <script>
+    const translations = {
+      id: {
+        nav_degree: "Sarjana Fisika • ITS Surabaya",
+        nav_about: "Tentang",
+        nav_research: "Riset & Rekayasa",
+        nav_exp: "Pengalaman Kerja",
+        nav_skills: "Keahlian",
+        nav_contact: "Kontak",
+        btn_cv_short: "Unduh CV",
+        btn_cv: "Unduh CV Lengkap (PDF)",
+        btn_cv_get: "Unduh Berkas CV Lengkap (PDF)",
+        btn_wa: "Hubungi via WhatsApp",
+        hero_status: "Terbuka untuk Peluang Karir Baru",
+        hero_role: "Lulusan Fisika Institut Teknologi Sepuluh Nopember (ITS) • Spesialisasi Akustik, Instrumentasi & Rekayasa Teknis",
+        hero_desc: "Menggabungkan keahlian analisis data eksperimen (MATLAB/Python), riset sistem pengukuran getaran kereta & IoT hidroponik otomatis, asisten lab 3+ tahun, serta kepemimpinan dan B2B Sales Engineering untuk solusi industri yang presisi.",
+        badge_gpa: "IPK Sarjana Fisika ITS",
+        badge_yr: "Tahun",
+        badge_lab: "Asisten Laboratorium Fisika",
+        photo_title: "Sarjana Sains (S.Si.) Fisika",
+        badge_verified: "Lulusan Resmi Fisika ITS",
+
+        sec_about_tag: "PROFIL PROFESIONAL",
+        sec_about_title: "Menghubungkan Ketelitian Sains Fisika dengan Kebutuhan Solusi Industri",
+        card_1_title: "Akustik & Instrumentasi Fisika",
+        card_1_desc: "Keahlian mengoperasikan perangkat laboratorium presisi, kalibrasi sensor, pengolahan sinyal digital, serta analisis komputasi gelombang suara menggunakan MATLAB dan Python.",
+        card_2_title: "Rekayasa Perangkat Keras & IoT",
+        card_2_desc: "Berpengalaman merancang struktur mekanik dan sirkuit elektronik sensor (sistem penimbangan beban dinamis kereta api & otomatisasi hidroponik berbasis mikrokontroler Arduino).",
+        card_3_title: "Konsultasi Teknis & B2B Sales",
+        card_3_desc: "Komunikasi teknis profesional dengan klien industri manufaktur & fabrikasi logam, pembuatan quotation, proposal teknis, koordinasi produksi, dan audit integritas data skala nasional.",
+
+        sec_res_tag: "PENGALAMAN RISET & REKAYASA TEKNOLOGI",
+        sec_res_title: "Inovasi Laboratorium Fisika, Sistem Instrumentasi & IoT",
+        thesis_badge: "Skripsi Sarjana Fisika ITS • Institut Teknologi Sepuluh Nopember",
+        thesis_title: "\"Analysis of the Effect of Finger Position on Acoustic Guitar Fretting Technique on Sound Quality based on Mersenne's Law\"",
+        thesis_desc: "Riset eksperimental yang meneliti pengaruh dinamika posisi penekanan fret gitar akustik terhadap harmonik frekuensi dan kualitas audio berdasarkan Hukum Mersenne. Mengembangkan sistem instrumen berbasis mikrokontroler presisi untuk menentukan posisi fret yang menghasilkan stabilitas frekuensi target secara optimal.",
+        thesis_tag1: "Integrasi Sistem Mikrokontroler",
+        thesis_tag2: "Analisis Spektrum Frekuensi Akustik",
+        thesis_tag3: "Formulasi Hukum Mersenne",
+        btn_repo: "Repository Karya Ilmiah ITS",
+
+        rail_title: "Anggota Tim Peneliti & Teknisi (Proyek Riset Dosen ITS)",
+        rail_sub: "Railway Weigh-in-Motion System (Departemen Fisika ITS)",
+        rail_desc: "Pengembangan sistem pengukuran bobot kereta api yang sedang bergerak menggunakan load cell pada rel dan pergeseran frekuensi alami rel akibat getaran.",
+        rail_tech_lbl: "Teknologi:",
+        rail_points: `<ul class="space-y-1.5">
+          <li>• Merancang struktur mekanik pemasangan sensor load cell pada rel dan mengintegrasikannya dengan sistem elektrikal.</li>
+          <li>• Merakit sirkuit elektronik, antarmuka sensor, serta memprogram mikrokontroler untuk akuisisi data (DAQ).</li>
+          <li>• Menerapkan analisis berbasis getaran, di mana massa kereta menurunkan frekuensi alami rel guna menentukan total bobot kereta bergerak.</li>
+          <li>• Melakukan kalibrasi, pengujian sistem di lapangan, serta menganalisis data hasil pengukuran.</li>
+        </ul>`,
+
+        kebon_title: "Teknisi Elektrikal & Pendiri (Founder)",
+        kebon_desc: "Startup binaan yang berakar dari inovasi teknologi tepat guna dan memenangkan LKTTG 2017 Sidoarjo (Lomba Karya Teknologi Tepat Guna).",
+        kebon_tech_lbl: "Teknologi:",
+        kebon_points: `<ul class="space-y-1.5">
+          <li>• Merancang rangkaian elektronik dan pengkabelan untuk sistem hidroponik berbasis Arduino yang memonitor nutrisi, suhu, dan kelembapan.</li>
+          <li>• Memasang dan mengalibrasi sensor, serta merakit aktuator (pompa nutrisi/air dan pompa pengatur pH) yang menjaga kondisi tumbuh optimal secara otomatis.</li>
+          <li>• Memprogram Arduino untuk pembacaan sensor dan kendali otomatis aktuator secara mandiri.</li>
+        </ul>`,
+
+        lab1_date: "Jan 2023 – Okt 2023",
+        lab1_title: "Asisten Laboratorium Fisika Instrumentasi Akustik",
+        lab1_sub: "Departemen Fisika ITS Surabaya",
+        lab1_points: `<ul class="space-y-2">
+          <li>• Membimbing mahasiswa dalam perancangan dan pelaksanaan eksperimen menggunakan perangkat pengukuran akustik.</li>
+          <li>• Mengoperasikan alat ukur presisi untuk merekam dan menganalisis spektrum data eksperimental.</li>
+          <li>• Berkolaborasi aktif dalam proyek riset akustik yang dipimpin oleh dosen peneliti departemen.</li>
+        </ul>`,
+
+        lab2_date: "Mei 2020 – Jun 2023 (3+ Thn)",
+        lab2_title: "Asisten Laboratorium Fisika Eksperimental",
+        lab2_sub: "Departemen Fisika ITS Surabaya",
+        lab2_points: `<ul class="space-y-2">
+          <li>• Mengasistensi sesi praktikum untuk Fisika Dasar I & II, Fisika Klasik, serta Fisika Modern.</li>
+          <li>• Menyampaikan materi praktikum, memandu metode pengukuran, serta menegakkan standar keselamatan kerja lab (K3).</li>
+          <li>• Mengoreksi laporan praktikum serta mengevaluasi pemahaman konsep mahasiswa secara komprehensif.</li>
+        </ul>`,
+
+        sec_exp_tag: "PENGALAMAN KERJA",
+        sec_exp_title: "Rekam Jejak Profesional & Kontribusi Industri",
+        sec_exp_sub: "Pengalaman industri manufaktur, operasional data BUMN, hingga edukasi sains",
+
+        job1_date: "Agu 2025 – Sekarang",
+        job1_title: "B2B Sales Engineer",
+        job1_desc: "Perusahaan sheet metal fabrication & engineering melayani klien industrial & manufaktur.",
+        job1_skilltag: "Keahlian Diterapkan:",
+        job1_skills: "Konsultasi Teknis, Penawaran Biaya & Quotation, Sheet Metal Fabrication, Presentasi Produk Industri.",
+        job1_points: `<ul class="space-y-1.5">
+          <li>• Memberikan konsultasi teknis dan rekomendasi spesifikasi produk rekayasa sesuai kebutuhan aplikasi klien industri.</li>
+          <li>• Menyusun proposal teknis komprehensif, perhitungan estimasi biaya/quotation, serta presentasi solusi sheet metal.</li>
+          <li>• Berkoordinasi intensif dengan tim teknik internal & produksi untuk menjamin akurasi delivery dan kepuasan klien.</li>
+        </ul>`,
+
+        job2_date: "Jun 2026 – Sep 2026",
+        job2_title: "Petugas Verifikasi Data (Program Bantuan Pangan)",
+        job2_loc: "• Surabaya (Remote)",
+        job2_desc: "BUMN logistik pangan nasional pengelola pasokan dan bantuan pangan beras pemerintah.",
+        job2_skilltag: "Keahlian Diterapkan:",
+        job2_skills: "Audit Data, Rekonsiliasi Silang, Kontrol Kualitas, Pelaporan Eksekutif, Manajemen Data Logistik.",
+        job2_points: `<ul class="space-y-1.5">
+          <li>• Memverifikasi data distribusi bantuan pangan beras nasional guna menjamin akurasi dan integritas data 100%.</li>
+          <li>• Melakukan cross-check rekonsiliasi data penerima manfaat terhadap laporan lapangan dan menandai potensi diskrepansi.</li>
+          <li>• Mengompilasi ringkasan audit data berkala dan melaporkan temuan secara sistematis kepada tim pengawas.</li>
+        </ul>`,
+
+        job3_date: "Jun 2025 – Sep 2025",
+        job3_title: "Petugas Distribusi Bantuan Pangan",
+        job3_skilltag: "Keahlian Diterapkan:",
+        job3_skills: "Manajemen Logistik Lapangan, Kepatuhan SOP, Koordinasi Gudang & Satgas, Pencatatan Akurat.",
+        job3_points: `<ul class="space-y-1.5">
+          <li>• Bertanggung jawab mendistribusikan bantuan pangan ke titik sasaran penerima manfaat sesuai jadwal dan SOP yang ketat.</li>
+          <li>• Mencatat data penyaluran secara terperinci serta berkoordinasi langsung dengan tim gudang dan satgas lapangan.</li>
+        </ul>`,
+
+        job4_date: "Jul 2019 – Jun 2025 (6 Tahun)",
+        job4_title: "Instruktur Robotika",
+        job4_skilltag: "Keahlian Diterapkan:",
+        job4_skills: "Pemrograman Mikrokontroler, Rangkaian Elektronika, Strategi Kompetisi, Pembinaan Tim.",
+        job4_points: `<ul class="space-y-1.5">
+          <li>• Mengajar kurikulum robotika komprehensif: elektronika dasar, perancangan mekanik, dan pemrograman sistem mikrokontroler.</li>
+          <li>• Membina dan mendampingi kontingen siswa dalam kejuaraan robotika tingkat regional hingga nasional.</li>
+          <li>• <strong>Prestasi bimbingan:</strong> Best Ship Design pada Automation Week 2019 & Juara 1 ARA ITS 4.0 Cyber Security Olympiad 2022.</li>
+        </ul>`,
+
+        job5_date: "Okt 2023 – Jul 2024",
+        job5_title: "Tutor Akademik (Matematika & Fisika)",
+        job5_skilltag: "Keahlian Diterapkan:",
+        job5_skills: "Pemecahan Masalah Kuantitatif, Fisika Lanjutan, Kalkulus, Komunikasi Edukatif.",
+        job5_points: `<ul class="space-y-1.5">
+          <li>• Membimbing 5 siswa olimpiade Matematika & Fisika tingkat SMA, menghasilkan 3 siswa peraih penghargaan kompetisi.</li>
+        </ul>`,
+
+        sec_skill_tag: "KOMPETENSI & KEAHLIAN",
+        sec_skill_title: "Kemampuan Teknis, Software, dan Analisis",
+        skill_grp1: "Keahlian Laboratorium & Instrumentasi Fisika",
+        skill_grp2: "Pemrograman & Perangkat Lunak Teknis",
+        skill_grp3: "Keahlian Profesional & Komersial",
+        skill_item_acoustics: "Pengukuran Akustik & Bunyi",
+        skill_item_sensor: "Integrasi & Kalibrasi Sensor",
+        skill_item_circuit: "Desain Sirkuit & Mekanik Instrumentasi",
+        skill_item_calib: "Pengoperasian Alat Lab Presisi",
+        skill_item_data: "Pengumpulan & Analisis Data Eksperimen",
+        skill_item_k3: "Keselamatan Kerja Lab (K3)",
+        skill_item_cad: "Gambar Fabrikasi & CAD Dasar",
+        skill_item_consult: "Konsultasi Teknis B2B",
+        skill_item_proposal: "Proposal Teknis & Penawaran Harga",
+        skill_item_adapt: "Adaptasi Cepat & Pembelajar Cekatan",
+        skill_item_coord: "Koordinasi Tim & Kerja Mandiri",
+        skill_item_audit: "Verifikasi & Audit Integritas Data",
+        lang_title: "Kemampuan Bahasa:",
+        lang_desc: "Bahasa Indonesia (Penutur Asli), Bahasa Inggris (Kerja Profesional)",
+
+        sec_org_tag: "PENGALAMAN ORGANISASI",
+        sec_org_title: "Kepemimpinan & Kolaborasi",
+        org1_date: "Jan 2020 – Des 2022",
+        org1_title: "Kepala Divisi",
+        org1_desc: "Unit kegiatan mahasiswa ITS bidang pengembangan bahasa & budaya asing (500+ anggota aktif).",
+        org1_points: `<ul class="space-y-1.5">
+          <li>• Memimpin 1 dari 5 divisi minat dengan membawahi 3 sub-divisi dan 500+ anggota aktif.</li>
+          <li>• Mengelola jadwal program kerja rutin serta memimpin evaluasi performa departemen bulanan.</li>
+          <li>• Mensupervisi 2 festival besar tahunan (INOCHI & K-Fest) dengan traffic 1.000+ pengunjung per hari.</li>
+        </ul>`,
+
+        org2_date: "Jul 2021 – Jan 2022",
+        org2_title: "Staf Komite Instruktur",
+        org2_desc: "Organisasi resmi mahasiswa Departemen Fisika ITS.",
+        org2_points: `<ul class="space-y-1.5">
+          <li>• Mengorganisir program orientasi mahasiswa baru Departemen Fisika ITS angkatan 2021.</li>
+          <li>• Merancang konsep orientasi yang berfokus pada penanaman etika akademik, integritas sains, dan nilai edukatif.</li>
+        </ul>`,
+
+        edu_badge: "Pendidikan Resmi",
+        edu_title: "Sarjana Sains Fisika (S.Si.) — Institut Teknologi Sepuluh Nopember (ITS)",
+        edu_desc: "Lulus Februari 2024 • Indeks Prestasi Kumulatif (IPK): 3.14 / 4.00 • Departemen Fisika, Fakultas Sains dan Analitika Data",
+
+        sec_contact_tag: "HUBUNGI SAYA",
+        sec_contact_title: "Mari Berdiskusi & Berkolaborasi",
+        sec_contact_sub: "Saya terbuka untuk mendiskusikan peluang karir penuh waktu, proyek rekayasa/teknis, atau konsultasi kebutuhan perusahaan Anda.",
+        contact_wa_lbl: "WhatsApp Langsung",
+        contact_wa_btn: "Kirim Pesan WA →",
+        contact_mail_lbl: "Email Resmi",
+        contact_mail_btn: "Kirim Email →",
+        contact_li_lbl: "Profil Profesional",
+        contact_li_btn: "Kunjungi LinkedIn →",
+        footer_copy: "© 2026 Arianto Bagus Wibowo, S.Si. Seluruh hak cipta dilindungi.",
+        footer_tag: "Institut Teknologi Sepuluh Nopember (ITS) • Fisika & Rekayasa Teknik"
+      },
+      en: {
+        nav_degree: "B.Sc. in Physics • ITS Surabaya",
+        nav_about: "About",
+        nav_research: "Research & Engineering",
+        nav_exp: "Work Experience",
+        nav_skills: "Skills",
+        nav_contact: "Contact",
+        btn_cv_short: "Download CV",
+        btn_cv: "Download Full CV (PDF)",
+        btn_cv_get: "Download Full Official CV (PDF)",
+        btn_wa: "Contact via WhatsApp",
+        hero_status: "Open to New Career Opportunities",
+        hero_role: "Physics Graduate from Institut Teknologi Sepuluh Nopember (ITS) • Specializing in Acoustics, Instrumentation & Technical Engineering",
+        hero_desc: "Combining experimental data analysis (MATLAB/Python), railway vibration weigh-in-motion research & automated IoT hydroponics, 3+ years lab assistantship, and proven leadership & B2B Sales Engineering for precision engineering solutions.",
+        badge_gpa: "ITS Physics Bachelor GPA",
+        badge_yr: "Years",
+        badge_lab: "Physics Lab Assistant",
+        photo_title: "Bachelor of Science (B.Sc.) in Physics",
+        badge_verified: "Official ITS Physics Graduate",
+
+        sec_about_tag: "PROFESSIONAL PROFILE",
+        sec_about_title: "Bridging Empirical Physics Rigor with Industrial Engineering Solutions",
+        card_1_title: "Acoustics & Physics Instrumentation",
+        card_1_desc: "Expertise in operating precision laboratory apparatus, sensor calibration, digital signal processing, and computational acoustic wave modeling using MATLAB and Python.",
+        card_2_title: "Hardware Engineering & IoT Systems",
+        card_2_desc: "Experienced in designing mechanical mounting structures and sensor electronic circuitry (railway dynamic weigh-in-motion systems & automated hydroponics via Arduino microcontrollers).",
+        card_3_title: "Technical Consulting & B2B Sales",
+        card_3_desc: "Professional technical liaison with industrial clients in sheet metal engineering, developing quotations, engineering proposals, production coordination, and national data integrity auditing.",
+
+        sec_res_tag: "RESEARCH & ENGINEERING INNOVATIONS",
+        sec_res_title: "Physics Laboratory Innovations, Instrumentation Systems & IoT",
+        thesis_badge: "ITS Physics Bachelor's Thesis • Institut Teknologi Sepuluh Nopember",
+        thesis_title: "\"Analysis of the Effect of Finger Position on Acoustic Guitar Fretting Technique on Sound Quality based on Mersenne's Law\"",
+        thesis_desc: "Empirical research investigating acoustic guitar fret pressing position dynamics on harmonic frequency response and sound quality based on Mersenne's Law. Engineered a precision microcontroller-based instrument to accurately identify optimal fret positions for target frequency stability.",
+        thesis_tag1: "Microcontroller System Integration",
+        thesis_tag2: "Acoustic Frequency Spectrum Analysis",
+        thesis_tag3: "Mersenne's Law Formulation",
+        btn_repo: "ITS Scientific Research Repository",
+
+        rail_title: "Research Team Member & Technician (Lecturer-led Project)",
+        rail_sub: "Railway Weigh-in-Motion System (ITS Physics Department)",
+        rail_desc: "Lecturer-led project to develop a system measuring the weight of moving trains using rail-mounted load cells and vibration natural frequency shifts.",
+        rail_tech_lbl: "Technologies:",
+        rail_points: `<ul class="space-y-1.5">
+          <li>• Designed mechanical structures for mounting load cells on the rail and integrated them with electrical systems.</li>
+          <li>• Built electronic circuits and sensor interfaces, and programmed the microcontroller for data acquisition (DAQ).</li>
+          <li>• Applied vibration-based analysis, where train mass lowers the rail's natural frequency to calculate total dynamic train weight.</li>
+          <li>• Calibrated, tested the system on-site, and analyzed experimental measurement datasets.</li>
+        </ul>`,
+
+        kebon_title: "Electrical Technician & Founder",
+        kebon_desc: "Appropriate technology startup derived from winning LKTTG 2017 Sidoarjo (Regional Appropriate Technology Competition).",
+        kebon_tech_lbl: "Technologies:",
+        kebon_points: `<ul class="space-y-1.5">
+          <li>• Designed circuitry and wiring for an Arduino-based hydroponic system monitoring nutrients, temperature, and humidity.</li>
+          <li>• Installed and calibrated sensors, and assembled actuators (nutrient/water & pH dosing pumps) for automatic optimal condition maintenance.</li>
+          <li>• Programmed the Arduino for sensor reading and autonomous actuator controls.</li>
+        </ul>`,
+
+        lab1_date: "Jan 2023 – Oct 2023",
+        lab1_title: "Acoustic Instrumentation Physics Laboratory Assistant",
+        lab1_sub: "Department of Physics, ITS Surabaya",
+        lab1_points: `<ul class="space-y-2">
+          <li>• Mentored undergraduate students in designing and executing experiments using acoustic measurement apparatus.</li>
+          <li>• Operated precision laboratory instruments to record and process experimental acoustic data spectrums.</li>
+          <li>• Actively contributed to faculty-led acoustic research initiatives within the physics department.</li>
+        </ul>`,
+
+        lab2_date: "May 2020 – Jun 2023 (3+ Yrs)",
+        lab2_title: "Experimental Physics Laboratory Assistant",
+        lab2_sub: "Department of Physics, ITS Surabaya",
+        lab2_points: `<ul class="space-y-2">
+          <li>• Facilitated practical lab courses for Fundamental Physics I & II, Classical Physics, and Modern Physics.</li>
+          <li>• Delivered instructional briefings, demonstrated calibration techniques, and enforced strict laboratory safety (K3) protocols.</li>
+          <li>• Evaluated practical lab reports and monitored students' empirical concept comprehension.</li>
+        </ul>`,
+
+        sec_exp_tag: "WORK EXPERIENCE",
+        sec_exp_title: "Professional Track Record & Industrial Contribution",
+        sec_exp_sub: "Manufacturing engineering, state-owned logistics data, to science education",
+
+        job1_date: "Aug 2025 – Present",
+        job1_title: "B2B Sales Engineer",
+        job1_desc: "Sheet metal fabrication and engineering enterprise serving industrial and manufacturing clients.",
+        job1_skilltag: "Key Skills Applied:",
+        job1_skills: "Technical Consultation, Cost Estimation & Quotation, Sheet Metal Fabrication, Industrial Presentations.",
+        job1_points: `<ul class="space-y-1.5">
+          <li>• Provide technical consultation and product recommendations to business clients based on their engineering requirements.</li>
+          <li>• Prepare comprehensive technical proposals, cost calculations/quotations, and product presentations.</li>
+          <li>• Coordinate with internal engineering and fabrication teams to ensure accurate project delivery and client satisfaction.</li>
+        </ul>`,
+
+        job2_date: "Jun 2026 – Sep 2026",
+        job2_title: "Data Verification Officer (Food Assistance Program)",
+        job2_loc: "• Surabaya (Remote)",
+        job2_desc: "Indonesian state-owned food logistics enterprise responsible for managing national food supply and assistance.",
+        job2_skilltag: "Key Skills Applied:",
+        job2_skills: "Data Auditing, Cross-referencing, Quality Control, Executive Reporting, Logistics Data Management.",
+        job2_points: `<ul class="space-y-1.5">
+          <li>• Verified distribution records of the government food assistance program to guarantee 100% accuracy and completeness.</li>
+          <li>• Cross-checked beneficiary databases against operational field reports and flagged anomalies.</li>
+          <li>• Compiled recurring audit reports and reported strategic findings systematically to supervising management.</li>
+        </ul>`,
+
+        job3_date: "Jun 2025 – Sep 2025",
+        job3_title: "Food Assistance Distribution Officer",
+        job3_skilltag: "Key Skills Applied:",
+        job3_skills: "Field Logistics Operations, SOP Compliance, Warehouse Coordination, Accurate Record Keeping.",
+        job3_points: `<ul class="space-y-1.5">
+          <li>• Distributed government food assistance to targeted beneficiaries strictly according to schedules and operational SOPs.</li>
+          <li>• Recorded real-time distribution logs and maintained constant coordination with warehouse and field operations teams.</li>
+        </ul>`,
+
+        job4_date: "Jul 2019 – Jun 2025 (6 Years)",
+        job4_title: "Robotics Instructor",
+        job4_skilltag: "Key Skills Applied:",
+        job4_skills: "Microcontroller Programming, Electronic Circuitry, Competition Strategy, Team Mentorship.",
+        job4_points: `<ul class="space-y-1.5">
+          <li>• Taught comprehensive robotics curriculum covering basic electrical principles, mechanical design, and system programming.</li>
+          <li>• Coached and accompanied student teams competing in regional and national robotics tournaments.</li>
+          <li>• <strong>Student achievements:</strong> Best Ship Design at Automation Week 2019 & 1st Place at ARA ITS 4.0 Cyber Security Olympiad 2022.</li>
+        </ul>`,
+
+        job5_date: "Oct 2023 – Jul 2024",
+        job5_title: "Academic Tutor (Mathematics & Physics)",
+        job5_skilltag: "Key Skills Applied:",
+        job5_skills: "Quantitative Problem Solving, Advanced Physics, Calculus, Educational Communication.",
+        job5_points: `<ul class="space-y-1.5">
+          <li>• Mentored 5 high school students for mathematics and physics olympiads, with 3 winning competition awards.</li>
+        </ul>`,
+
+        sec_skill_tag: "COMPETENCIES & SKILLS",
+        sec_skill_title: "Technical, Computational, and Analytical Strengths",
+        skill_grp1: "Physics Laboratory & Instrumentation",
+        skill_grp2: "Programming & Engineering Software",
+        skill_grp3: "Professional & Commercial Capabilities",
+        skill_item_acoustics: "Acoustics & Sound Analysis",
+        skill_item_sensor: "Sensor Integration & Calibration",
+        skill_item_circuit: "Instrumentation Circuit & Mechanical Design",
+        skill_item_calib: "Precision Lab Instrument Operation",
+        skill_item_data: "Experimental Data Acquisition & Analysis",
+        skill_item_k3: "Laboratory Safety Standards (K3)",
+        skill_item_cad: "Fabrication Drawings & Basic CAD",
+        skill_item_consult: "B2B Technical Consulting",
+        skill_item_proposal: "Technical Proposals & Quotations",
+        skill_item_adapt: "Fast Learning & Quick Adaptation",
+        skill_item_coord: "Teamwork & Autonomous Execution",
+        skill_item_audit: "Data Verification & Integrity Auditing",
+        lang_title: "Language Proficiency:",
+        lang_desc: "Indonesian (Native Speaker), English (Professional Working Proficiency)",
+
+        sec_org_tag: "ORGANIZATIONAL EXPERIENCE",
+        sec_org_title: "Leadership & Collaboration",
+        org1_date: "Jan 2020 – Dec 2022",
+        org1_title: "Head of Division",
+        org1_desc: "ITS student activity organization focusing on foreign languages and cultures (500+ active members).",
+        org1_points: `<ul class="space-y-1.5">
+          <li>• Led 1 of 5 interest divisions supervising 3 sub-divisions and over 500 active student members.</li>
+          <li>• Managed strategic activity calendars and led monthly departmental performance reviews.</li>
+          <li>• Supervised 2 major annual cultural festivals (INOCHI & K-Fest) attracting over 1,000+ attendees daily.</li>
+        </ul>`,
+
+        org2_date: "Jul 2021 – Jan 2022",
+        org2_title: "Instructor Committee Staff",
+        org2_desc: "Official student association of the ITS Physics Department.",
+        org2_points: `<ul class="space-y-1.5">
+          <li>• Organized and conducted orientation programs for incoming Physics Department freshmen (Class of 2021).</li>
+          <li>• Formulated curriculum focusing on academic integrity, scientific ethics, and character building.</li>
+        </ul>`,
+
+        edu_badge: "Formal Education",
+        edu_title: "Bachelor of Science in Physics (B.Sc.) — Institut Teknologi Sepuluh Nopember (ITS)",
+        edu_desc: "Graduated February 2024 • Cumulative GPA: 3.14 / 4.00 • Department of Physics, Faculty of Science and Data Analytics",
+
+        sec_contact_tag: "GET IN TOUCH",
+        sec_contact_title: "Let's Connect & Discuss Opportunities",
+        sec_contact_sub: "Available for full-time engineering and analytical roles, technical projects, or corporate consultations.",
+        contact_wa_lbl: "Direct WhatsApp",
+        contact_wa_btn: "Send WhatsApp Message →",
+        contact_mail_lbl: "Official Email",
+        contact_mail_btn: "Send Email →",
+        contact_li_lbl: "Professional Profile",
+        contact_li_btn: "Visit LinkedIn Profile →",
+        footer_copy: "© 2026 Arianto Bagus Wibowo, S.Si. All rights reserved.",
+        footer_tag: "Institut Teknologi Sepuluh Nopember (ITS) • Physics & Technical Engineering"
+      }
+    };
+
+    let currentLang = 'id';
+
+    function updateLanguageDOM(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const key = el.getAttribute('data-lang');
+        if (translations[lang] && translations[lang][key] !== undefined) {
+          if (translations[lang][key].includes('<')) {
+            el.innerHTML = translations[lang][key];
+          } else {
+            el.textContent = translations[lang][key];
+          }
+        }
+      });
+      document.getElementById('langLabel').textContent = lang === 'id' ? 'ID (Bahasa)' : 'EN (English)';
+      document.documentElement.lang = lang;
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      updateLanguageDOM(currentLang);
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+    }
+
+    // Initialize Lucide Icons & default language
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons();
+      updateLanguageDOM('id');
+    });
+  </script>
+</body>
+</html>
